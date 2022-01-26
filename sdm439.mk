@@ -360,6 +360,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.sdm439
 
+# Lawnchair
+PRODUCT_PACKAGES += \
+    Lawnchair
+
+PRODUCT_PACKAGES += \
+$(LOCAL_PATH)/configs/app.lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/app.lawnchair-hiddenapi-package-whitelist.xml  
+
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-full-v29.so \
@@ -374,7 +381,8 @@ PRODUCT_PACKAGES += \
 
 # Whitelisted app
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/permissions/privapp-permissions-huaqin.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-huaqin.xml
+    $(LOCAL_PATH)/permissions/privapp-permissions-huaqin.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-huaqin.xml \
+    $(LOCAL_PATH)/permissions/privapp-permissions-app.lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-app.lawnchair.xml
 
 # Wifi
 PRODUCT_PACKAGES += \
